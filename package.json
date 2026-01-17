@@ -1,0 +1,23 @@
+{
+  "name": "meteorank",
+  "version": "1.0.0",
+  "description": "The backend of MeteoRank is built using Node.js with Express.js and is responsible for fetching real-time weather data from the OpenWeatherMap API, computing the custom Comfort Index score for each city, and serving processed results to the frontend.",
+  "main": "Server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ATgayan/Meteorank_Backend.git"
+  },
+  "author": "Thushitha Athukorale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ATgayan/Meteorank_Backend/issues"
+  },
+  "homepage": "https://github.com/ATgayan/Meteorank_Backend#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  }
+}

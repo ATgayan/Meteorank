@@ -1,0 +1,69 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnp/
+.pnp.js
+
+# Runtime data
+dist/
+build/
+coverage/
+tmp/
+temp/
+*.tgz
+*.log
+logs/
+*.pid
+
+# Environment
+.env
+.env.*.local
+.env.local
+.env.test
+.env.production
+
+# TypeScript
+*.tsbuildinfo
+
+# Editors and OS
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Debug/IDE specific
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+
+# PM2
+pids/
+*.pid
+*.seed
+
+# Coverage & test
+.nyc_output/
+jest-stare/
+coverage/
+
+# Misc
+.sass-cache/
+bower_components/
+.cache/
+bower_components/
+dist-ssr/
+
+# Lockfiles (keep usually, uncomment to ignore)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
