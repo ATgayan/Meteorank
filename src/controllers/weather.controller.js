@@ -8,7 +8,6 @@ export const getWeatherDashboard = async (req, res) => {
 
   for (const cityId of cityCodes) {
     const data = await fetchWeatherByCity(cityId);
-
     const comfortScore = calculateComfortIndex({
       temp: data.main.temp,
       humidity: data.main.humidity,
@@ -18,6 +17,10 @@ export const getWeatherDashboard = async (req, res) => {
 
     results.push({
       city: data.name,
+      humidity: data.main.humidity,
+      windSpeed: data.wind.speed,
+      cloudCoverage: data.clouds.all,
+      description: data.weather[0].description,
       temperature: data.main.temp,
       weather: data.weather[0].description,
       comfortScore

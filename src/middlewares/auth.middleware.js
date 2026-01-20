@@ -1,14 +1,8 @@
-import { expressjwt } from "express-jwt";
-import jwksRsa from "jwks-rsa";
-import { env } from "../config/env.js";
-
-export const authMiddleware = expressjwt({
-  secret: jwksRsa.expressJwtSecret({
-    jwksUri: `https://${env.auth0Domain}/.well-known/jwks.json`,
-    cache: true,
-    rateLimit: true
-  }),
-  audience: env.auth0Audience,
-  issuer: `https://${env.auth0Domain}/`,
-  algorithms: ["RS256"]
-});
+// middlewares/requireAuth.js
+export const requireAuth = (req, res, next) => {
+  console.log("Auth Middleware Invoked");
+  if (!req.oidc.isAuthenticated()) {
+    return res.status(401).json({ message: "Login required" });
+  }
+  next();
+};
