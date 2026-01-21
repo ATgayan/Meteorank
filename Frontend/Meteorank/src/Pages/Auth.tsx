@@ -1,10 +1,26 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { Cloud, CloudRain, Sun, Wind } from "lucide-react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const WeatherAuth = () => {
+  const { loginWithRedirect, logout, isAuthenticated, isLoading } = useAuth0();
+  
+  if (isAuthenticated) {
+    console.log("Is Authenticated:", isAuthenticated);
+    return <Navigate to="/dashboard" replace />;
+  }
+  
+  if (isLoading) {
+  return (
+    <div className="flex min-h-screen items-center justify-center">
+      <p>Loading...</p>
+    </div>
+  );
+}
+
  
   return (
+    
     <div className="flex min-h-screen bg-white">
       {/* Left Panel - Weather Animation */}
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-700">
@@ -56,15 +72,18 @@ const WeatherAuth = () => {
 
           {/* Auth Button */}
           <div className="flex flex-col gap-4">
-            <button
+            {!isAuthenticated ? (
+              <button
               onClick={() => {
                 // Redirect to backend login route
-                window.location.href = "http://localhost:8081/login";
+                loginWithRedirect();
               }}
               className="w-full border-2 border-blue-600 text-blue-600 py-3 rounded-lg font-medium hover:bg-blue-50 transition-all"
             >
               Login with Auth0
             </button>
+            ) : (null
+            )}
           </div>
         </div>
       </div>

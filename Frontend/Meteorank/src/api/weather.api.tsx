@@ -1,6 +1,6 @@
-import api from "./axios";
+// import api from "./axios";
 
-export const fetchDashboard = async () => {
-  const res = await api.get("/weather/dashboard");
-  return res.data;
-};
+// export const fetchDashboard = async () => {
+//   const res = await api.get("/weather/dashboard");
+//   return res.data;
+// };

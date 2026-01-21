@@ -1,8 +1,24 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.js'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { Auth0Provider } from "@auth0/auth0-react";
+import App from "./App";
+import "./index.css";
 
-createRoot(document.getElementById('root')!).render(
-    <App />
-)
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <BrowserRouter>
+      <Auth0Provider
+        domain="dev-vrfxr26got6onk2d.us.auth0.com"
+        clientId="2iIQyxYJ93tXvPqutaMqVLLxLBDq8CFu"
+        authorizationParams={{
+          redirect_uri: window.location.origin,
+          audience: "https://weather-api",
+          scope: "read:weather"
+        }}
+      >
+        <App />
+      </Auth0Provider>
+    </BrowserRouter>
+  </StrictMode>
+);
