@@ -68,12 +68,12 @@ const WeatherDashboard = () => {
           </div>
 
           <div className="flex gap-4">
-            <button
+            {/* <button
               onClick={() => setDarkMode(!darkMode)}
               className="px-4 py-2 rounded-lg bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900 transition"
             >
               {darkMode ? "☀ Light" : "🌙 Dark"}
-            </button>
+            </button> */}
 
             <button
               onClick={() => (window.location.href = "http://localhost:8081/logout")}
@@ -183,9 +183,9 @@ const WeatherDashboard = () => {
               </div>
 
               {/* Graph Placeholder */}
-              <div className="mt-6 h-40 rounded-xl bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-300">
+              {/* <div className="mt-6 h-40 rounded-xl bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-300">
                 Weather Graph
-              </div>
+              </div> */}
             </div>
           )}
         </div>
