@@ -3,9 +3,6 @@ import WeatherPage from "../Pages/Weather_Status";
 import LoginPage from "../Pages/Auth";
 
 
-
-
-
 const AppRoutes = () => (
   <Routes>
     {/* Root redirect */}

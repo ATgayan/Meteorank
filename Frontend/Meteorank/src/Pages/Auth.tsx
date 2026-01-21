@@ -1,9 +1,10 @@
 import { Navigate } from "react-router-dom";
 import { Cloud, CloudRain, Sun, Wind } from "lucide-react";
 import { useAuth0 } from "@auth0/auth0-react";
+import Loading from "./Loading";
 
 const WeatherAuth = () => {
-  const { loginWithRedirect, logout, isAuthenticated, isLoading } = useAuth0();
+  const { loginWithRedirect, isAuthenticated, isLoading } = useAuth0();
   
   if (isAuthenticated) {
     console.log("Is Authenticated:", isAuthenticated);
@@ -13,7 +14,7 @@ const WeatherAuth = () => {
   if (isLoading) {
   return (
     <div className="flex min-h-screen items-center justify-center">
-      <p>Loading...</p>
+      <Loading />
     </div>
   );
 }

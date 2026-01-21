@@ -1,4 +1,6 @@
-import logo from '../assets/images/loading.png';
+
+// @ts-ignore: missing module declaration for image asset
+import logo  from '../assets/images/loading.png';
 
 function Loading() {
     return (
